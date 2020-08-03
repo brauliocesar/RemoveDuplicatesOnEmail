@@ -30,9 +30,9 @@ public class EmailStackController {
      * Search and Remove All Duplicated Emails
      */
     public void removeDuplicatedEmails() {
-        List<Email> mEmailCopy = List.copyOf(g_mEmailList);
+        final List<Email> mEmailCopy = List.copyOf(g_mEmailList);
         for (int iIndexEmail = 0; iIndexEmail < mEmailCopy.size(); iIndexEmail++) {
-            Email mEmail = mEmailCopy.get(iIndexEmail);
+            final Email mEmail = mEmailCopy.get(iIndexEmail);
             removeDuplicatedEmails(iIndexEmail + 1, mEmail);
         }
     }
@@ -41,9 +41,9 @@ public class EmailStackController {
      * Remove Duplicated Emails By Index
      */
     private void removeDuplicatedEmails(int iIndex, Email mEmailReference) {
-        List<Email> mEmailCopy = List.copyOf(g_mEmailList);
+        final List<Email> mEmailCopy = List.copyOf(g_mEmailList);
         for (int iIndexEmail = iIndex; iIndexEmail < mEmailCopy.size(); iIndexEmail++) {
-            Email mEmail = mEmailCopy.get(iIndexEmail);
+            final Email mEmail = mEmailCopy.get(iIndexEmail);
             if (mEmailReference.equals(mEmail)) {
                 g_mEmailList.remove(iIndexEmail);
             }
